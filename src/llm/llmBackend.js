@@ -62,6 +62,23 @@ async function generateText({ provider, model, prompt, maxTokens, temperature, s
             const response = await anthropic.messages.create(claudeOptions);
             return response.content[0].text.trim();
 
+        } else if (provider === 'groq') {
+            const apiKey = process.env.GROQ_API_KEY;
+            if (!apiKey) throw new Error('Groq API key missing on server.');
+
+            const openai = new OpenAI({ apiKey: apiKey, baseURL: 'https://api.groq.com/openai/v1' });
+            const messages = [];
+            if (systemPrompt) messages.push({ role: "system", content: systemPrompt });
+            messages.push({ role: "user", content: prompt });
+
+            const response = await openai.chat.completions.create({
+                model: model,
+                messages,
+                max_tokens: maxTokens || 500,
+                temperature: temperature || 0.7,
+            });
+            return response.choices[0].message.content.trim();
+
         } else if (['codex', 'claude-cli', 'gemini-cli'].includes(provider)) {
             // CLI providers are handled by llmService.js via the runner system
             throw new Error(`CLI provider ${provider} should not reach llmBackend.js - use llmService instead`);

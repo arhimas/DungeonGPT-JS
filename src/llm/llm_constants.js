@@ -15,6 +15,11 @@ export const AVAILABLE_MODELS = {
         { id: 'claude-sonnet-4-5-20250929', name: 'Claude Sonnet 4.5' },
         { id: 'claude-3-5-sonnet-20240620', name: 'Claude 3.5 Sonnet (Legacy)' },
     ],
+    groq: [
+        { id: 'llama-3.3-70b-versatile', name: 'Llama 3.3 70B (Groq)' },
+        { id: 'llama3-8b-8192', name: 'Llama 3 8B (Groq)' },
+        { id: 'mixtral-8x7b-32768', name: 'Mixtral 8x7B (Groq)' }
+    ],
     // CLI Tools
     'codex': [
         { id: 'codex-cli', name: 'Codex CLI (Default)' }
@@ -43,6 +48,7 @@ export const DEFAULT_MODELS = {
     gemini: 'gemini-3-flash-preview',
     openai: 'gpt-5-mini',
     claude: 'claude-sonnet-4-5-20250929',
+    groq: 'llama-3.3-70b-versatile',
     codex: 'codex-cli',
     'claude-cli': 'claude-cli',
     'gemini-cli': 'gemini-3-flash-preview',

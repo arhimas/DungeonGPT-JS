@@ -113,6 +113,7 @@ export const AISettingsModalContent = ({
                         {AVAILABLE_MODELS['openai'] && <option value="openai">OpenAI</option>}
                         {AVAILABLE_MODELS['gemini'] && <option value="gemini">Gemini</option>}
                         {AVAILABLE_MODELS['claude'] && <option value="claude">Claude</option>}
+                        {AVAILABLE_MODELS['groq'] && <option value="groq">Groq</option>}
                       </optgroup>
                     )}
                     {AVAILABLE_MODELS['cf-workers'] && (
@@ -151,6 +152,7 @@ export const AISettingsModalContent = ({
                         {AVAILABLE_MODELS['openai'] && <option value="openai">OpenAI</option>}
                         {AVAILABLE_MODELS['gemini'] && <option value="gemini">Gemini</option>}
                         {AVAILABLE_MODELS['claude'] && <option value="claude">Claude</option>}
+                        {AVAILABLE_MODELS['groq'] && <option value="groq">Groq</option>}
                       </optgroup>
                     )}
                     {AVAILABLE_MODELS['cf-workers'] && (
